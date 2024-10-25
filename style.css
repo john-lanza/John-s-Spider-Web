@@ -16,7 +16,13 @@ body {
     padding: 20px; /* Padding inside the box */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px; /* Fixed width to prevent box resizing */
+    height: 200px; /* Fixed height to prevent box resizing */
+    border: 4px solid #ff99cc; /* Solid border slightly darker than pastel pink */
+    border-image: url('path_to_squiggly_border.svg') 30 round; /* Add squiggly border image */
 }
+
+/* Additional styles for h1, p, highlight can remain the same */
 
 h1 {
     color: #ffccff; /* Change heading color to pastel pink */
