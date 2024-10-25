@@ -16,36 +16,24 @@ body {
     padding: 20px; /* Padding inside the box */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px; /* Fixed width to prevent box resizing */
+    height: 200px; /* Fixed height to prevent box resizing */
 }
 
-h1 {
-    color: #ffccff; /* Change heading color to pastel pink */
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: 1.2em;
-    margin: 0.3em 0;
-}
-
-.highlight {
-    color: #ffccff; /* Change highlight color to pastel pink */
-    font-weight: bold;
-}
-
-/* Typing Animation */
-.typing {
-    display: inline-block;
+h1, p {
     overflow: hidden; /* Ensures no overflow */
     white-space: nowrap; /* Prevents line breaks */
+    display: inline-block; /* Allows the width animation to work */
+}
+
+.typing {
     border-right: .15em solid #ffccff; /* Cursor effect */
-    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+    animation: typing 4s steps(30, end) forwards, blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 @keyframes blink-caret {
