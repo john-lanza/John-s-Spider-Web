@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Amazing Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to my website</h1>
+        <p>My website is very amazing</p>
+        <p>I &lt;3 my website</p>
+        <p class="highlight">But tomatoes are gross</p>
+    </div>
+</body>
+</html>
+
