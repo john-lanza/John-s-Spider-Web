@@ -1,5 +1,5 @@
 body {
-    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #00c6ff 10px, #00c6ff 20px); /* New pattern background */
+    background: repeating-linear-gradient(45deg, #ffccff, #ffccff 30px, #f7d0d9 30px, #f7d0d9 60px); /* Bigger pastel pink stripes */
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -10,12 +10,12 @@ body {
 
 .content {
     text-align: center;
-    color: #333;
+    color: #ffccff; /* Set body text color to pastel pink */
     font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-    color: #1e90ff;
+    color: #ffccff; /* Change heading color to pastel pink */
     font-size: 2.5em;
     margin-bottom: 0.5em;
 }
@@ -26,6 +26,6 @@ p {
 }
 
 .highlight {
-    color: #ff4500;
+    color: #ffccff; /* Change highlight color to pastel pink */
     font-weight: bold;
 }
