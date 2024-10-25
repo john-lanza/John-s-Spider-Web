@@ -33,3 +33,22 @@ p {
     color: #ffccff; /* Change highlight color to pastel pink */
     font-weight: bold;
 }
+
+/* Typing Animation */
+.typing {
+    display: inline-block;
+    overflow: hidden; /* Ensures no overflow */
+    white-space: nowrap; /* Prevents line breaks */
+    border-right: .15em solid #ffccff; /* Cursor effect */
+    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffccff; }
+}
