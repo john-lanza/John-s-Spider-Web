@@ -4,27 +4,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 100vh; /* Keep full viewport height */
+    margin: 0; /* Remove default margin */
     border: 10px solid transparent; /* Create a transparent border for SVG */
     border-image: url('squiggly_border.svg') 30 stretch; /* Add squiggly border image */
+    padding: 20px; /* Add padding to create space between the content and border */
+    box-sizing: border-box; /* Ensure padding is included in height */
 }
 
 .content {
     text-align: center;
-    color: #d47c92; /* Change body text color to darker pink */
+    color: #d47c92; /* Set body text color to the darker pink */
     font-family: 'Courier New', Courier, monospace;
     background-color: #ffffff; /* White box background */
     padding: 20px; /* Padding inside the box */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     width: 400px; /* Fixed width to prevent box resizing */
-    height: 200px; /* Fixed height to prevent box resizing */
+    max-width: 100%; /* Allow it to be responsive */
 }
 
 /* Keep the styles for h1, p, highlight the same */
 h1 {
-    color: #d47c92; /* Change heading color to darker pink */
+    color: #d47c92; /* Change heading color to the same darker pink */
     font-size: 2.5em;
     margin-bottom: 0.5em;
 }
@@ -35,6 +37,15 @@ p {
 }
 
 .highlight {
-    color: #d47c92; /* Change highlight color to darker pink */
+    color: #d47c92; /* Change highlight color to the same darker pink */
     font-weight: bold;
+}
+
+/* Ensure the border color matches */
+body {
+    border-image-source: url('squiggly_border.svg'); /* Specify border image */
+    border-image-slice: 30; /* Specify slice value */
+    border-image-width: 10px; /* Width of border */
+    border-image-outset: 0; /* No outset */
+    border-image-repeat: stretch; /* Stretch the image to fit */
 }
