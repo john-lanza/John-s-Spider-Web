@@ -1,41 +1,34 @@
 body {
-    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px); /* White and pastel pink stripes */
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
     margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif;
+    height: 100vh; /* Full viewport height for the bordered section */
+    display: flex;
+    flex-direction: column;
+    background: #d47c92; /* Solid darker pink for the area below the border */
+    color: #d47c92; /* Default text color */
+}
+
+.border-wrapper {
+    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px); /* White and pastel pink stripes */
     border: 10px solid #d47c92; /* Solid darker pink border */
-    padding: 20px; /* Space between the content and border */
-    box-sizing: border-box; /* Ensure padding is included in height */
+    flex-shrink: 0; /* Ensure this doesn't shrink */
+    box-sizing: border-box; /* Include border in size calculation */
+    padding: 20px;
 }
 
 .content {
     text-align: center;
-    color: #d47c92; /* Set body text color to the same darker pink */
+    color: #d47c92; /* Text matches border */
     font-family: 'Courier New', Courier, monospace;
     background-color: #ffffff; /* White box background */
-    padding: 20px; /* Padding inside the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     width: 400px; /* Fixed width */
-    max-width: 100%; /* Responsive */
+    margin: 0 auto; /* Center horizontally */
 }
 
-/* Keep the styles for h1, p, highlight the same */
-h1 {
-    color: #d47c92; /* Heading color same as border */
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: 1.2em;
-    margin: 0.3em 0;
-}
-
-.highlight {
-    color: #d47c92; /* Highlight color same as border */
-    font-weight: bold;
+.scrollable {
+    background-color: #d47c92; /* Solid darker pink background for scrolling area */
+    height: 300vh; /* Simulate a long scrollable area (adjust as needed) */
 }
