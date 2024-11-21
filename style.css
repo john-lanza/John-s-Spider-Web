@@ -1,9 +1,6 @@
 body {
     margin: 0; /* Remove default margin */
     font-family: 'Arial', sans-serif;
-    height: 100vh; /* Full viewport height for the bordered section */
-    display: flex;
-    flex-direction: column;
     background: #d47c92; /* Solid darker pink for the area below the border */
     color: #d47c92; /* Default text color */
 }
@@ -11,9 +8,11 @@ body {
 .border-wrapper {
     background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px); /* White and pastel pink stripes */
     border: 10px solid #d47c92; /* Solid darker pink border */
-    flex-shrink: 0; /* Ensure this doesn't shrink */
+    height: 100vh; /* Full viewport height for the top section */
     box-sizing: border-box; /* Include border in size calculation */
-    padding: 20px;
+    display: flex; /* Center content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -30,5 +29,6 @@ body {
 
 .scrollable {
     background-color: #d47c92; /* Solid darker pink background for scrolling area */
-    height: 300vh; /* Simulate a long scrollable area (adjust as needed) */
+    height: 200vh; /* Simulate a long scrollable area (adjust as needed) */
+    padding: 20px; /* Optional: Add padding for any content inside */
 }
