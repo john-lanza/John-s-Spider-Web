@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Top Section with Striped Background and Border -->
     <div class="border-wrapper">
         <div class="content">
             <h1>Welcome to my website</h1>
@@ -15,9 +16,18 @@
             <p class="highlight">Billie Eilish is a Queen</p>
         </div>
     </div>
+
+    <!-- Scrollable Section with Dark Pink Background -->
     <div class="scrollable">
-        <!-- Add any content you want for the scrolling area below -->
-        <p style="color: #ffffff; font-size: 1.5em;">This is the solid darker pink section. Add more content here!</p>
+        <div class="form-container">
+            <h2>Please describe your dilemma</h2>
+            <textarea id="userQuestion" rows="4" placeholder="Type your question here..."></textarea>
+            <button id="submitButton">Submit</button>
+            <p id="response" style="margin-top: 20px;"></p>
+        </div>
     </div>
+
+    <!-- Link JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
