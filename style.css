@@ -38,10 +38,8 @@ body {
 
 /* Form Container Styles */
 .form-container {
-    position: absolute;
-    top: 20%; /* Position in the upper middle of the dark pink section */
-    left: 50%;
-    transform: translate(-50%, -20%);
+    position: relative; /* Place inside the scrollable section */
+    margin: 0 auto; /* Center the form horizontally */
     text-align: center;
     width: 90%; /* Keep form container responsive */
     max-width: 800px; /* Limit maximum width */
@@ -49,8 +47,10 @@ body {
     background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
     border-radius: 15px; /* Rounded edges */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 50px; /* Add spacing from the top of the dark pink section */
 }
 
+/* Heading in Form */
 h2 {
     font-size: 2em;
     margin-bottom: 20px;
