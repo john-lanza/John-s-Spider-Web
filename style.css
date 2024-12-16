@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     margin: 0; /* Remove default margin */
     font-family: 'Arial', sans-serif;
@@ -5,6 +6,7 @@ body {
     color: #d47c92; /* Default text color */
 }
 
+/* Top Section Styles */
 .border-wrapper {
     background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px); /* White and pastel pink stripes */
     border: 10px solid #d47c92; /* Solid darker pink border */
@@ -27,8 +29,40 @@ body {
     margin: 0 auto; /* Center horizontally */
 }
 
+/* Scrollable Section Styles */
 .scrollable {
     background-color: #d47c92; /* Solid darker pink background for scrolling area */
     height: 200vh; /* Simulate a long scrollable area (adjust as needed) */
     padding: 20px; /* Optional: Add padding for any content inside */
 }
+
+/* Form Container Styles */
+.form-container {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+    resize: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+   
