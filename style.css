@@ -1,103 +1,102 @@
 /* Global Styles */
 body {
-    margin: 0; /* Remove default margin */
+    margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #d47c92; /* Solid darker pink for the area below the border */
-    color: #d47c92; /* Default text color */
+    background: #d47c92; /* Solid darker pink */
+    color: #d47c92; /* Darker pink text */
 }
 
 /* Top Section Styles */
 .border-wrapper {
-    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px); /* White and pastel pink stripes */
-    border: 10px solid #d47c92; /* Solid darker pink border */
-    height: 100vh; /* Full viewport height for the top section */
-    box-sizing: border-box; /* Include border in size calculation */
-    display: flex; /* Center content vertically and horizontally */
+    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px);
+    border: 10px solid #d47c92;
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .content {
     text-align: center;
-    color: #d47c92; /* Text matches border */
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #ffffff; /* White box background */
+    color: #d47c92;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 400px; /* Fixed width */
-    margin: 0 auto; /* Center horizontally */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
 }
 
 /* Scrollable Section Styles */
 .scrollable {
-    background-color: #d47c92; /* Solid darker pink background for scrolling area */
-    height: 200vh; /* Simulate a long scrollable area (adjust as needed) */
-    padding: 20px; /* Optional: Add padding for any content inside */
-}
-
-/* Form Container Styles */
-.form-container {
-    position: relative; /* Place inside the scrollable section */
-    margin: 0 auto; /* Center the form horizontally */
-    text-align: center;
-    width: 90%; /* Keep form container responsive */
-    max-width: 800px; /* Limit maximum width */
+    background-color: #d47c92;
+    height: 100vh; /* Full viewport height */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin-top: 50px; /* Add spacing from the top of the dark pink section */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align form to the top */
 }
 
-/* Heading in Form */
+/* Form Container */
+.form-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Heading */
 h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #ffffff; /* White heading text */
+    color: #ffffff;
 }
 
-/* Textarea Styles */
+/* Textarea */
 textarea {
-    width: 100%; /* Full width inside container */
-    height: 200px; /* Larger text box */
-    border: 2px solid #ffffff; /* White border */
-    border-radius: 10px; /* Rounded corners */
+    width: 100%;
+    height: 200px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
     padding: 15px;
     font-size: 1.2em;
     font-family: 'Courier New', Courier, monospace;
-    color: #d47c92; /* Text matches dark pink background */
-    background-color: #ffffff; /* White background for contrast */
+    color: #d47c92;
+    background-color: #ffffff;
     outline: none;
-    resize: none; /* Disable resizing */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    resize: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Styles */
+/* Button */
 button {
     margin-top: 20px;
     padding: 12px 30px;
     font-size: 1.2em;
     font-weight: bold;
-    background-color: #ffffff; /* White button */
-    color: #d47c92; /* Dark pink text */
+    background-color: #ffffff;
+    color: #d47c92;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #ffccff; /* Lighter pink hover effect */
-    transform: translateY(-2px); /* Subtle lift on hover */
+    background-color: #ffccff;
+    transform: translateY(-2px);
 }
 
 /* Response Text */
 #response {
-    color: #ffffff; /* White response text */
+    color: #ffffff;
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 20px;
+    white-space: pre-line; /* Preserves line breaks in response */
 }
