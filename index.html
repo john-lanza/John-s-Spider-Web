@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Section with Striped Background and Border -->
+    <!-- Top Section -->
     <div class="border-wrapper">
         <div class="content">
             <h1>Welcome to my website</h1>
@@ -17,17 +17,37 @@
         </div>
     </div>
 
-    <!-- Scrollable Section with Dark Pink Background -->
+    <!-- Scrollable Section -->
     <div class="scrollable">
         <div class="form-container">
             <h2>Please describe your dilemma</h2>
-            <textarea id="userQuestion" rows="4" placeholder="Type your question here..."></textarea>
-            <button id="submitButton">Submit</button>
-            <p id="response" style="margin-top: 20px;"></p>
+            <textarea id="questionInput" placeholder="Type your question here..."></textarea>
+            <button onclick="submitQuestion()">Submit</button>
+            <p id="response"></p>
         </div>
     </div>
 
-    <!-- Link JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        function submitQuestion() {
+            const question = document.getElementById('questionInput').value.trim().toLowerCase();
+            const responseElement = document.getElementById('response');
+            
+            // Default response
+            let response = "That's an interesting question, but I need more context!";
+
+            // Analyze the question
+            if (question.includes("nap") && question.includes("car ride")) {
+                response = "Here’s my recommendation based on your car ride:\n\n";
+
+                response += "1. **Who is in the car?** If you're alone, it's safer to stay awake. If trusted family or friends are driving, a nap could be fine.\n";
+                response += "2. **How long is the ride?** If the ride is longer than 30 minutes, a short nap might be refreshing.\n";
+                response += "3. **What time of day is it?** If it’s late afternoon or evening, naps could mess up your sleep schedule. But if it's earlier, go for it!\n\n";
+                response += "**Final Answer**: If you're tired and it's safe, take a quick 20-minute nap. Otherwise, enjoy the ride and chat with your travel buddies!";
+            }
+
+            // Set the response
+            responseElement.innerText = response;
+        }
+    </script>
 </body>
 </html>
