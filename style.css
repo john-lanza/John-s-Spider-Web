@@ -1,109 +1,102 @@
-/* General Body Styling */
+/* Global Styles */
 body {
-    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #f8c1cc 10px, #f8c1cc 20px); /* Stripey pastel pink */
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #d47c92; /* Solid darker pink */
+    color: #d47c92; /* Darker pink text */
 }
 
-/* Stripey Background Section */
-.stripey-section {
+/* Top Section Styles */
+.border-wrapper {
+    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px);
+    border: 10px solid #d47c92;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+.content {
     text-align: center;
-    position: relative;
-    color: #8b4b55; /* Darker pink text color */
+    color: #d47c92;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
 }
 
-h1 {
-    color: #8b4b55;
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
+/* Scrollable Section Styles */
+.scrollable {
+    background-color: #d47c92;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align form to the top */
 }
 
-p {
-    font-size: 1.2em;
-    margin: 0.3em 0;
-}
-
-.highlight {
-    color: #ff4500;
-    font-weight: bold;
-}
-
-/* Solid Dark Pink Section */
-.solid-section {
-    background-color: #d4848f; /* Solid darker pink */
-    color: #ffffff;
-    padding: 50px 20px;
+/* Form Container */
+.form-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    min-height: 100vh;
 }
 
-.solid-section h2 {
+/* Heading */
+h2 {
     font-size: 2em;
     margin-bottom: 20px;
-}
-
-#dilemma-input {
-    width: 90%;
-    max-width: 500px;
-    height: 150px;
-    padding: 10px;
-    border: 2px solid #8b4b55;
-    border-radius: 10px;
-    font-size: 1em;
-    color: #8b4b55;
-    outline: none;
-    display: block;
-    margin: 0 auto 20px;
-    resize: none;
-}
-
-#submit-button {
-    background-color: #ffffff;
-    color: #8b4b55;
-    border: 2px solid #8b4b55;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-#submit-button:hover {
-    background-color: #8b4b55;
     color: #ffffff;
 }
 
-#response-text {
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 15px;
     font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #d47c92;
+    background-color: #ffffff;
+    outline: none;
+    resize: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button */
+button {
     margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #d47c92;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #ffccff;
+    transform: translateY(-2px);
+}
+
+/* Response Text */
+#response {
     color: #ffffff;
-}
-
-/* Image Styling - Decorative Image */
-.corner-image {
-    position: absolute;
-    top: 20px;          /* Distance from the top */
-    left: 20px;         /* Distance from the left */
-    width: 150px;       /* Adjust size of the image */
-    height: auto;
-    border: 5px solid white;
-    border-radius: 50%;
-    transform: rotate(-10deg);
-    animation: float 3s infinite alternate ease-in-out;
-}
-
-/* Floating Animation */
-@keyframes float {
-    0% {
-        transform: translateY(0) rotate(-10deg);
-    }
-    100% {
-        transform: translateY(10px) rotate(-10deg);
-    }
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    white-space: pre-line; /* Preserves line breaks in response */
 }
