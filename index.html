@@ -7,40 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Stripey Background Section -->
-    <header class="stripey-section">
+    <!-- Top Section -->
+    <div class="border-wrapper">
         <div class="content">
             <h1>Welcome to my website</h1>
             <p>My website is very amazing</p>
             <p>I &lt;3 my website</p>
             <p class="highlight">Billie Eilish is a Queen</p>
         </div>
-        <!-- New Image in Corner -->
-        <img src="corner-image.png" alt="Decorative Image" class="corner-image">
-    </header>
+    </div>
 
-    <!-- Solid Dark Pink Section -->
-    <section class="solid-section">
-        <h2>Please describe your dilemma</h2>
-        <textarea id="dilemma-input" placeholder="Type your question here..."></textarea>
-        <button id="submit-button">Submit</button>
-        <p id="response-text"></p>
-    </section>
+    <!-- Scrollable Section -->
+    <div class="scrollable">
+        <div class="form-container">
+            <h2>Please describe your dilemma</h2>
+            <textarea id="questionInput" placeholder="Type your question here..."></textarea>
+            <button onclick="submitQuestion()">Submit</button>
+            <p id="response"></p>
+        </div>
+    </div>
 
-    <!-- JavaScript Logic -->
     <script>
-        document.getElementById("submit-button").addEventListener("click", function() {
-            const userQuestion = document.getElementById("dilemma-input").value.toLowerCase();
-            let response = "That's an interesting dilemma!";
+        function submitQuestion() {
+            const question = document.getElementById('questionInput').value.trim().toLowerCase();
+            const responseElement = document.getElementById('response');
+            
+            // Default response
+            let response = "That's an interesting question, but I need more context!";
 
-            if (userQuestion.includes("nap") || userQuestion.includes("car ride")) {
-                response = "It depends! Consider these factors:\n1. Who is in the car?\n2. How long is the ride?\n3. What time of day is it?";
-            } else {
-                response = "Hmm... I think this problem might need further analysis.";
+            // Analyze the question
+            if (question.includes("nap") && question.includes("car ride")) {
+                response = "Here’s my recommendation based on your car ride:\n\n";
+
+                response += "1. **Who is in the car?** If you're alone, it's safer to stay awake. If trusted family or friends are driving, a nap could be fine.\n";
+                response += "2. **How long is the ride?** If the ride is longer than 30 minutes, a short nap might be refreshing.\n";
+                response += "3. **What time of day is it?** If it’s late afternoon or evening, naps could mess up your sleep schedule. But if it's earlier, go for it!\n\n";
+                response += "**Final Answer**: If you're tired and it's safe, take a quick 20-minute nap. Otherwise, enjoy the ride and chat with your travel buddies!";
             }
 
-            document.getElementById("response-text").innerText = response;
-        });
+            // Set the response
+            responseElement.innerText = response;
+        }
     </script>
 </body>
 </html>
