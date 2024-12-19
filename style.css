@@ -1,102 +1,145 @@
-/* Global Styles */
+/* General Styles */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #d47c92; /* Solid darker pink */
-    color: #d47c92; /* Darker pink text */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #F6CDD3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 }
 
-/* Top Section Styles */
-.border-wrapper {
-    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 30px, #ffccff 30px, #ffccff 60px);
-    border: 10px solid #d47c92;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+h1, h2, h3 {
+  text-align: center;
+  margin: 0;
 }
 
-.content {
-    text-align: center;
-    color: #d47c92;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+/* Section Styling */
+#striped-section {
+  background: repeating-linear-gradient(
+    -45deg,
+    #F6CDD3,
+    #F6CDD3 10px,
+    #F0A3B1 10px,
+    #F0A3B1 20px
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
-/* Scrollable Section Styles */
-.scrollable {
-    background-color: #d47c92;
-    height: 100vh; /* Full viewport height */
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align form to the top */
+#solid-section {
+  background-color: #B05765;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+  box-sizing: border-box;
 }
 
-/* Form Container */
-.form-container {
-    width: 90%;
-    max-width: 700px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
+/* Header Text */
+h1 {
+  font-size: 3em;
+  font-weight: bold;
 }
 
-/* Heading */
 h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ffffff;
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: 300;
 }
 
-/* Textarea */
+/* Input Box */
 textarea {
-    width: 100%;
-    height: 200px;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    padding: 15px;
-    font-size: 1.2em;
-    font-family: 'Courier New', Courier, monospace;
-    color: #d47c92;
-    background-color: #ffffff;
-    outline: none;
-    resize: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 80%;
+  max-width: 600px;
+  height: 150px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  color: #B05765; /* Dark pink text */
 }
 
-/* Button */
+textarea::placeholder {
+  color: #B05765; /* Match the text color */
+}
+
+/* Button Styles */
 button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: #ffffff;
-    color: #d47c92;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  color: #B05765;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #ffccff;
-    transform: translateY(-2px);
+  background-color: #F0A3B1; /* Slightly lighter pink */
 }
 
-/* Response Text */
-#response {
-    color: #ffffff;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    white-space: pre-line; /* Preserves line breaks in response */
+/* Dropdown Menus */
+select {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  outline: none;
+  width: 80%;
+  max-width: 600px;
+  color: #B05765; /* Dark pink text */
+}
+
+/* Center Alignment */
+form, textarea, select, button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* For the DVD-like Animation Placeholder */
+.bouncing-image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 10px;
+  animation: bounce 5s infinite;
+}
+
+/* Animation for Bouncing */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(300px, 0);
+  }
+  50% {
+    transform: translate(300px, 300px);
+  }
+  75% {
+    transform: translate(0, 300px);
+  }
 }
