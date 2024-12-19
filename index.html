@@ -4,71 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driving Safety Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="section light-pink">
-        <h1>Welcome to the Driving Safety Calculator</h1>
-        <p>Please scroll down to the advice generator below</p>
-    </div>
-
-    <div class="section dark-pink">
-        <h2>Additional Information</h2>
-        <div class="dropdowns">
-            <label for="weather">What is the weather like:</label>
-            <select id="weather">
-                <option value="sunny">Sunny</option>
-                <option value="snowy">Snowy</option>
-                <option value="rainy">Rainy</option>
-            </select>
-
-            <label for="time">Is it dark or light out:</label>
-            <select id="time">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-
-            <label for="drive">Is your car 4-wheel drive:</label>
-            <select id="drive">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
+    <div class="border">
+        <div class="stripey-section">
+            <div class="welcome-box">
+                <h1>Welcome to the Driving Safety Calculator</h1>
+                <p>Please scroll down to the advice generator below</p>
+            </div>
         </div>
-
-        <button id="calculate">Should I drive?</button>
-        <p id="result"></p>
+        <div class="dark-section">
+            <h2>Driving Safety Calculator</h2>
+            <div class="dropdown-container">
+                <label for="weather">What is the weather like:</label>
+                <select id="weather">
+                    <option value="sunny">Sunny</option>
+                    <option value="rainy">Rainy</option>
+                    <option value="snowy">Snowy</option>
+                </select>
+            </div>
+            <div class="dropdown-container">
+                <label for="light">Is it dark or light out:</label>
+                <select id="light">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div class="dropdown-container">
+                <label for="car-type">Is your car 4-wheel drive:</label>
+                <select id="car-type">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
     </div>
-
-    <script>
-        document.getElementById('calculate').addEventListener('click', function() {
-            const weather = document.getElementById('weather').value;
-            const time = document.getElementById('time').value;
-            const drive = document.getElementById('drive').value;
-
-            let advice = "";
-
-            if (weather === "sunny") {
-                advice += "Sunny: Pretty easy weather to drive in. ";
-            } else if (weather === "snowy") {
-                advice += "Snowy: Can be difficult especially without 4-wheel drive. ";
-            } else if (weather === "rainy") {
-                advice += "Rainy: Not too bad, just take it slow. ";
-            }
-
-            if (time === "light") {
-                advice += "Light: Easy to see all your surroundings. ";
-            } else if (time === "dark") {
-                advice += "Dark: Hard to see everything on the road. ";
-            }
-
-            if (drive === "yes") {
-                advice += "4-wheel drive: Can get through any conditions but in snow and ice drive slow.";
-            } else if (drive === "no") {
-                advice += "No 4-wheel drive: Best to stay off the road in snowy and icy conditions.";
-            }
-
-            document.getElementById('result').innerText = advice;
-        });
-    </script>
 </body>
 </html>
