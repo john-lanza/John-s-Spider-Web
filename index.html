@@ -3,51 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Amazing Website</title>
+    <title>Driving Safety Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Section -->
-    <div class="border-wrapper">
-        <div class="content">
-            <h1>Welcome to my website</h1>
-            <p>My website is very amazing</p>
-            <p>I &lt;3 my website</p>
-            <p class="highlight">Billie Eilish is a Queen</p>
-        </div>
+    <div class="striped-section">
+        <h1>Welcome to the Driving Safety Calculator</h1>
+        <p>Please scroll down to the advice generator below</p>
     </div>
+    
+    <div class="solid-pink-section">
+        <h2>Please describe your dilemma</h2>
+        <textarea id="dilemma" placeholder="Type your question here..."></textarea>
+        <button id="submit-dilemma">Submit</button>
 
-    <!-- Scrollable Section -->
-    <div class="scrollable">
-        <div class="form-container">
-            <h2>Please describe your dilemma</h2>
-            <textarea id="questionInput" placeholder="Type your question here..."></textarea>
-            <button onclick="submitQuestion()">Submit</button>
-            <p id="response"></p>
-        </div>
+        <h3>Additional Information</h3>
+        <form id="driving-form">
+            <label for="weather">What is the weather like:</label>
+            <select id="weather">
+                <option value="sunny">Sunny</option>
+                <option value="snowy">Snowy</option>
+                <option value="rainy">Rainy</option>
+            </select>
+            
+            <label for="visibility">Is it dark or light out:</label>
+            <select id="visibility">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+            
+            <label for="four-wheel-drive">Is your car 4-wheel drive:</label>
+            <select id="four-wheel-drive">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            <button id="check-driving">Should I drive?</button>
+        </form>
+
+        <div id="driving-advice"></div>
     </div>
 
     <script>
-        function submitQuestion() {
-            const question = document.getElementById('questionInput').value.trim().toLowerCase();
-            const responseElement = document.getElementById('response');
-            
-            // Default response
-            let response = "That's an interesting question, but I need more context!";
+        document.getElementById("check-driving").addEventListener("click", function(event) {
+            event.preventDefault();
 
-            // Analyze the question
-            if (question.includes("nap") && question.includes("car ride")) {
-                response = "Here’s my recommendation based on your car ride:\n\n";
+            const weather = document.getElementById("weather").value;
+            const visibility = document.getElementById("visibility").value;
+            const fourWheelDrive = document.getElementById("four-wheel-drive").value;
 
-                response += "1. **Who is in the car?** If you're alone, it's safer to stay awake. If trusted family or friends are driving, a nap could be fine.\n";
-                response += "2. **How long is the ride?** If the ride is longer than 30 minutes, a short nap might be refreshing.\n";
-                response += "3. **What time of day is it?** If it’s late afternoon or evening, naps could mess up your sleep schedule. But if it's earlier, go for it!\n\n";
-                response += "**Final Answer**: If you're tired and it's safe, take a quick 20-minute nap. Otherwise, enjoy the ride and chat with your travel buddies!";
+            let advice = "";
+
+            // Weather advice
+            if (weather === "sunny") {
+                advice += "Pretty easy weather to drive in. ";
+            } else if (weather === "snowy") {
+                advice += "Can be difficult especially without 4-wheel drive. ";
+            } else if (weather === "rainy") {
+                advice += "Not too bad, just take it slow. ";
             }
 
-            // Set the response
-            responseElement.innerText = response;
-        }
+            // Visibility advice
+            if (visibility === "light") {
+                advice += "Easy to see all your surroundings. ";
+            } else if (visibility === "dark") {
+                advice += "Hard to see everything on the road. ";
+            }
+
+            // 4-wheel drive advice
+            if (fourWheelDrive === "yes") {
+                advice += "Can get through any conditions, but in snow and ice drive slow.";
+            } else if (fourWheelDrive === "no") {
+                advice += "Best to stay off the road in snowy and icy conditions.";
+            }
+
+            document.getElementById("driving-advice").innerText = advice;
+        });
     </script>
 </body>
 </html>
